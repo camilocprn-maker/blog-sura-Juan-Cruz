@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodología Ágil en la Transformación Digital de SURA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #F5F3EE;
+        }
+        
+        /* PORTADA */
+        .portada {
+            background: linear-gradient(135deg, #1B4D3E 0%, #2D6A52 100%);
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            page-break-after: always;
+        }
+        
+        .portada h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .portada h2 {
+            font-size: 2em;
+            margin-bottom: 40px;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+        
+        .portada-info {
+            font-size: 1.1em;
+            margin-top: 60px;
+            opacity: 0.9;
+        }
+        
+        .portada-info p {
+            margin: 10px 0;
+        }
+        
+        .logo-sura {
+            font-size: 2em;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+        
+        /* CONTENIDO */
+        .contenedor {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #F5F3EE;
+            padding: 60px 50px;
+            line-height: 1.8;
+        }
+        
+        .seccion {
+            margin-bottom: 50px;
+            page-break-inside: avoid;
+        }
+        
+        h2 {
+            color: #000000;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #1B4D3E;
+            padding-bottom: 15px;
+        }
+        
+        h3 {
+            color: #000000;
+            font-size: 1.5em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        h4 {
+            color: #000000;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 1.05em;
+        }
+        
+        .intro-destacado {
+            background-color: #E8F7F3;
+            border-left: 4px solid #48C9B0;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+        
+        .metodologia-card {
+            background: #F5F3EE;
+            border: 2px solid #1B4D3E;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .metodologia-card h4 {
+            color: #000000;
+            margin-top: 0;
+        }
+        
+        .paso {
+            background: #D4F1E8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #1B4D3E;
+        }
+        
+        .paso-numero {
+            font-weight: bold;
+            color: #1B4D3E;
+            font-size: 1.1em;
+        }
+        
+        .tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: #F5F3EE;
+        }
+        
+        .tabla th {
+            background-color: #1B4D3E;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .tabla td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .tabla tr:hover {
+            background-color: #E8F7F3;
+        }
+        
+        .destaca {
+            background-color: #D4F1E8;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid #1B4D3E;
+        }
+        
+        .conclusion-box {
+            background: linear-gradient(135deg, #1B4D3E 0%, #2D6A52 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .conclusion-box h3 {
+            color: white;
+            margin-top: 0;
+        }
+        
+        .referencias {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #1B4D3E;
+        }
+        
+        .referencia {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 0.95em;
+            padding-left: 20px;
+            text-indent: -20px;
+        }
+        
+        .alineacion-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .alineacion-tabla th {
+            background-color: #1B4D3E;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .alineacion-tabla td {
+            padding: 12px;
+            border: 1px solid #D4F1E8;
+        }
+        
+        .alineacion-tabla tr:nth-child(even) {
+            background-color: #E8F7F3;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #1B4D3E;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        @media print {
+            .portada {
+                page-break-after: always;
+            }
+            .seccion {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PORTADA -->
+    <div class="portada">
+        <div class="logo-sura">🏥</div>
+        <h1>Metodología Ágil en SURA</h1>
+        <h2>Transformación Digital Mediante Scrum</h2>
+        <div class="portada-info">
+            <p><strong>Caso de Estudio:</strong> Inteligencia Artificial y Análisis de Datos</p>
+            <p><strong>Especialización en Analítica de Datos</strong></p>
+            <p><strong>Universidad Católica de Colombia</strong></p>
+            <p style="margin-top: 40px; font-size: 0.95em;">Septiembre, 2026</p>
+        </div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="contenedor">
+        <!-- INTRODUCCIÓN -->
+        <div class="seccion">
+            <h2>Introducción</h2>
+            <p>
+                Seguros SURA Colombia se encuentra en un punto crítico de transformación digital, impulsada por su acuerdo estratégico 
+                con Google Cloud. La empresa busca modernizar sus procesos de salud, implementar inteligencia artificial (IA) avanzada y 
+                crear nuevas experiencias para 10 millones de usuarios a través de la plataforma <strong>Relevant</strong>.
+            </p>
+            <div class="intro-destacado">
+                <p>
+                    <strong>Contexto Clave:</strong> SURA procesó 124 millones de autorizaciones el año anterior. Con esta transformación, 
+                    la organización debe gestionar cambios complejos, integrar múltiples sistemas, automatizar procesos legales y mejorar 
+                    la interoperabilidad en salud. Esta magnitud de cambio requiere una metodología ágil que permita flexibilidad, 
+                    iteración rápida y entrega de valor continuo.
+                </p>
+            </div>
+            <p>
+                En este blog desarrollamos cómo la metodología <strong>Scrum</strong> es la más apropiada para liderar este proyecto, 
+                explicando su paso a paso, características clave y cómo integrar IA/BI en la gestión de proyectos para maximizar el éxito.
+            </p>
+        </div>
+
+        <!-- OBJETIVOS -->
+        <div class="seccion">
+            <h2>Objetivos</h2>
+            <ul>
+                <li><strong>General:</strong> Demostrar cómo la metodología Scrum facilita la transformación digital de SURA mediante 
+                la entrega iterativa de valor, gestión eficiente del cambio organizacional y optimización de recursos.
+                </li>
+                <li><strong>Específicos:</strong></li>
+                <ul>
+                    <li>Explicar el paso a paso de la metodología Scrum en el contexto de SURA.</li>
+                    <li>Alinear las características de Scrum con las necesidades específicas del proyecto de transformación digital.</li>
+                    <li>Integrar IA/BI como habilitadores clave en la gestión de proyectos y toma de decisiones.</li>
+                    <li>Proporcionar recomendaciones de liderazgo para maximizar el éxito de la organización.</li>
+                </ul>
+            </ul>
+        </div>
+
+        <!-- DESARROLLO -->
+        <div class="seccion">
+            <h2>Desarrollo</h2>
+
+            <!-- 1.4.1 PASO A PASO SCRUM -->
+            <h3>1. Paso a Paso: Implementación de Metodología Scrum en SURA</h3>
+            
+            <h4>¿Por qué elegir Scrum para SURA?</h4>
+            <p>
+                Scrum es la metodología ágil más apropiada para el proyecto de transformación digital de SURA porque:
+            </p>
+            <ul>
+                <li><strong>Complejidad del Proyecto:</strong> SURA debe integrar AI, análisis de datos, automatización legal y plataformas en nube. 
+                Scrum maneja proyectos complejos mediante descomposición en incrementos manejables.</li>
+                <li><strong>Cambio Continuo:</strong> Las tecnologías y necesidades de los usuarios evolucionan constantemente. 
+                Scrum permite adaptarse rápidamente sin perder el control.</li>
+                <li><strong>Entrega de Valor Temprana:</strong> Con 10 millones de usuarios, SURA necesita demostrar resultados iterativos. 
+                Scrum entrega funcionalidades cada 2-3 semanas (sprints).</li>
+                <li><strong>Colaboración Multidisciplinaria:</strong> El proyecto requiere colaboración entre IT, salud, legal y negocio. 
+                Scrum facilita esta integración mediante ceremonias estructuradas.</li>
+                <li><strong>Gestión de Riesgos:</strong> Los sprints permiten identificar y mitigar riesgos tempranamente.</li>
+            </ul>
+
+            <h4>Paso a Paso: Ciclo de Scrum en SURA</h4>
+            
+            <div class="paso">
+                <span class="paso-numero">Fase 1: Planificación del Producto (Weeks 1-2)</span>
+                <p><strong>Actividades:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>Crear el <strong>Product Backlog</strong> (lista priorizada de requisitos de SURA):
+                        <ul>
+                            <li>Implementación de plataforma Relevant</li>
+                            <li>Integración de AI para autorización de servicios</li>
+                            <li>Interoperabilidad con sistemas de salud</li>
+                            <li>Automatización de procesos legales (PQR)</li>
+                            <li>Sincronización con app de salud (Vive Más)</li>
+                        </ul>
+                    </li>
+                    <li>Definir historias de usuario con criterios de aceptación claros</li>
+                    <li>Estimar esfuerzo usando story points</li>
+                </ul>
+                <p><strong>Responsables:</strong> Product Owner (director de proyecto SURA) + stakeholders (áreas de Salud, Legal, IT)</p>
+            </div>
+
+            <div class="paso">
+                <span class="paso-numero">Fase 2: Planificación del Sprint (Inicio de cada ciclo, ~4 horas)</span>
+                <p><strong>Actividades:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>Seleccionar elementos del Product Backlog para el Sprint (típicamente 2-3 semanas)</li>
+                    <li>Crear el <strong>Sprint Backlog</strong> con tareas específicas</li>
+                    <li>Definir capacidad del equipo (disponibilidad, vacaciones)</li>
+                    <li>Establecer meta del sprint: "Completar 60% de la integración AI para autorización de servicios"</li>
+                </ul>
+                <p><strong>Responsables:</strong> Scrum Master + equipo de desarrollo</p>
+            </div>
+
+            <div class="paso">
+                <span class="paso-numero">Fase 3: Ejecución del Sprint (2-3 semanas)</span>
+                <p><strong>Actividades Diarias:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li><strong>Daily Standup (15 min):</strong> Cada miembro del equipo reporta:
+                        <ul>
+                            <li>¿Qué hizo ayer?</li>
+                            <li>¿Qué hará hoy?</li>
+                            <li>¿Qué obstáculos enfrenta?</li>
+                        </ul>
+                    </li>
+                    <li>Mantener el tablero Scrum actualizado (To Do → In Progress → Done)</li>
+                    <li>Realizar code reviews y testing continuo</li>
+                    <li>Integración continua (CI/CD) con Google Cloud</li>
+                </ul>
+                <p><strong>Responsables:</strong> Equipo de desarrollo (desarrolladores, analistas, QA)</p>
+            </div>
+
+            <div class="paso">
+                <span class="paso-numero">Fase 4: Sprint Review / Demo (Fin del sprint, ~2 horas)</span>
+                <p><strong>Actividades:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>Demostrar trabajo completado (incremento potencialmente entregable)</li>
+                    <li>Obtener feedback de stakeholders (áreas de Salud, Negocio, Usuarios)</li>
+                    <li>Ajustar prioridades del Product Backlog basado en feedback</li>
+                    <li>Ejemplo: "Mostrar prototipo de interfaz de AI para consulta de autorización"</li>
+                </ul>
+                <p><strong>Responsables:</strong> Scrum Master + equipo + Product Owner + stakeholders</p>
+            </div>
+
+            <div class="paso">
+                <span class="paso-numero">Fase 5: Sprint Retrospectiva (Fin del sprint, ~1.5 horas)</span>
+                <p><strong>Actividades:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>Reflexionar: ¿Qué salió bien? ¿Qué mejorar? ¿Qué no funcionó?</li>
+                    <li>Crear acciones de mejora para el próximo sprint</li>
+                    <li>Ejemplo de mejora: "Necesitamos más documentación de API de Google Cloud"</li>
+                    <li>Capacitar al equipo en temas nuevos (IA, BI)</li>
+                </ul>
+                <p><strong>Responsables:</strong> Scrum Master + equipo</p>
+            </div>
+
+            <div class="paso">
+                <span class="paso-numero">Fase 6: Incremento Entregable</span>
+                <p><strong>Output del Sprint:</strong> Un incremento funcional de software que:
+                    <ul>
+                        <li>Cumple con el objetivo del sprint</li>
+                        <li>Está testeado y listo para producción (en Google Cloud)</li>
+                        <li>Agrega valor mensurable a SURA</li>
+                    </ul>
+                </p>
+            </div>
+
+            <!-- 1.4.2 CARACTERÍSTICAS CLAVE -->
+            <h3>2. Características Clave de Scrum y Alineación con SURA</h3>
+            
+            <p>
+                A continuación se detalla cómo cada característica de Scrum se alinea con los desafíos específicos de SURA:
+            </p>
+
+            <table class="alineacion-tabla">
+                <thead>
+                    <tr>
+                        <th>Característica Scrum</th>
+                        <th>Necesidad de SURA</th>
+                        <th>Alineación / Beneficio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sprints (2-3 sem.)</strong></td>
+                        <td>Actualizar app SURA desde octubre; 124M autorizaciones/año</td>
+                        <td>Entrega iterativa permite lanzar features sin interrumpir servicios. Cada sprint = una mejora en la plataforma Relevant.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Product Backlog Priorizado</strong></td>
+                        <td>Múltiples iniciativas: AI, automatización, interoperabilidad, salud digital</td>
+                        <td>Product Owner (negocio SURA) define qué es más crítico. AI para autorización = alta prioridad. Legal automation = media.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Daily Standup</strong></td>
+                        <td>10M usuarios esperan soluciones; cambios regulativos en salud</td>
+                        <td>Detectar bloqueos al día. Ejemplo: "Google Cloud API no documentada" → escalado inmediato.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sprint Review</strong></td>
+                        <td>Usuarios finales necesitan validar cambios en autorizaciones/salud</td>
+                        <td>Mostrar funcionalidad real. Médicos y pacientes dan feedback directo → ajustes rápidos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Retrospectiva</strong></td>
+                        <td>Transformación digital = cambio cultural; equipo multi-disciplinario</td>
+                        <td>Mejorar colaboración. "¿Legal comprende el alcance técnico?" → capacitación en próximo sprint.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Roles Claros (PO, SM, Team)</strong></td>
+                        <td>Organización grande; responsabilidades difusas históricamente</td>
+                        <td>Product Owner = Ejecutivo de negocio SURA. Scrum Master = Líder de transformación. Equipo = IT + Salud + Legal.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Estructura de Roles en SURA con Scrum</h4>
+            
+            <div class="metodologia-card">
+                <h4>Product Owner (PO)</h4>
+                <p><strong>Quién:</strong> Director o líder de producto digital de SURA</p>
+                <p><strong>Responsabilidades:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>Definir visión clara: "10M usuarios con experiencias personalizadas en salud"</li>
+                    <li>Priorizar Product Backlog: ¿Primero AI o interoperabilidad?</li>
+                    <li>Aceptar incrementos completados</li>
+                    <li>Comunicar cambios regulativos (normativas de salud) al equipo</li>
+                </ul>
+            </div>
+
+            <div class="metodologia-card">
+                <h4>Scrum Master (SM)</h4>
+                <p><strong>Quién:</strong> Líder de transformación o gerente de proyecto ágil</p>
+                <p><strong>Responsabilidades:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>Facilitar ceremonias Scrum (planificación, standups, retro)</li>
+                    <li>Remover bloqueos: "Google Cloud requiere integración con AD de SURA"</li>
+                    <li>Entrenar al equipo en ágil y BI/AI</li>
+                    <li>Proteger al equipo de distracciones</li>
+                </ul>
+            </div>
+
+            <div class="metodologia-card">
+                <h4>Equipo de Desarrollo</h4>
+                <p><strong>Composición (8-10 personas):</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>2-3 Desarrolladores backend (APIs, bases de datos)</li>
+                    <li>2-3 Desarrolladores frontend (interfaz de usuario, app)</li>
+                    <li>1 Analista de datos / BI (dashboards, analytics)</li>
+                    <li>1 Especialista en IA/ML (modelos predictivos)</li>
+                    <li>1 QA / Tester (pruebas, validación)</li>
+                    <li>1 Especialista en seguridad/compliance (regulaciones de salud)</li>
+                </ul>
+                <p><strong>Responsabilidades:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>Auto-organizarse para alcanzar meta del sprint</li>
+                    <li>Entregar código de calidad testeado</li>
+                    <li>Participar en dailies y demos</li>
+                    <li>Aprender continuamente (new tech, IA)</li>
+                </ul>
+            </div>
+
+            <!-- 1.4.3 IA/BI EN GESTIÓN DE PROYECTOS -->
+            <h3>3. Liderazgo Digital: Inteligencia Artificial y BI en Gestión de Proyectos</h3>
+            
+            <p>
+                La transformación de SURA no solo implementa IA en productos, sino también en cómo se <strong>gestiona</strong> 
+                el proyecto mismo. Los líderes deben mejorar prácticas usando IA/BI:
+            </p>
+
+            <h4>3.1 Desafíos Actuales en Gestión de Proyectos de SURA</h4>
+            
+            <div class="destaca">
+                <ul>
+                    <li><strong>Complejidad de datos:</strong> 124M autorizaciones/año + datos de 10M usuarios = difícil ver patrones manualmente</li>
+                    <li><strong>Riesgos ocultos:</strong> ¿Qué feature causa más PQR (quejas)? ¿Qué equipo está en riesgo de atraso?</li>
+                    <li><strong>Toma de decisiones lenta:</strong> Esperar Sprint Review para decisiones críticas cuesta tiempo</li>
+                    <li><strong>Adaptación regulatoria:</strong> Cambios en normativa de salud → necesidad de pivots rápidos</li>
+                    <li><strong>Capacitación continua:</strong> Equipo debe aprender IA/Google Cloud en paralelo a desarrollo</li>
+                </ul>
+            </div>
+
+            <h4>3.2 Soluciones con IA y BI</h4>
+
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Desafío</th>
+                        <th>Solución con IA/BI</th>
+                        <th>Herramienta / Implementación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Identificar features de alto riesgo</td>
+                        <td><strong>Análisis Predictivo:</strong> Modelo ML que predice qué stories van a atrasar basado en complejidad, equipo, dependencias</td>
+                        <td>Google Cloud AI Platform + Python. Dashboard en Looker Studio con predicciones</td>
+                    </tr>
+                    <tr>
+                        <td>Monitorear salud del proyecto en tiempo real</td>
+                        <td><strong>Dashboard BI:</strong> KPIs dinámicos: velocity del equipo, burndown rate, blockers activos, defect density</td>
+                        <td>Power BI o Looker Studio conectado a herramienta Scrum (Jira, Azure DevOps)</td>
+                    </tr>
+                    <tr>
+                        <td>Detectar patrones de PQR (quejas de usuarios)</td>
+                        <td><strong>NLP + Sentiment Analysis:</strong> IA analiza miles de PQRs → agrupa por tema, detecta temas emergentes</td>
+                        <td>Google Cloud Natural Language API. Resultado: priorizar features que mitigan quejas más frecuentes</td>
+                    </tr>
+                    <tr>
+                        <td>Optimizar capacidad de equipo</td>
+                        <td><strong>Predicción de carga:</strong> IA estima cuánto story points puede completar equipo en próximo sprint basado en histórico</td>
+                        <td>Analítica histórica de sprints + machine learning. Evita compromisos irrealistas</td>
+                    </tr>
+                    <tr>
+                        <td>Entrenar equipo eficientemente</td>
+                        <td><strong>Plataformas de aprendizaje adaptativo:</strong> IA sugiere contenido de capacitación personalizado (IA, Google Cloud, BI) basado en gaps de skills</td>
+                        <td>Coursera para empresas o plataformas internas con IA. Cada miembro recibe ruta personalizada</td>
+                    </tr>
+                    <tr>
+                        <td>Responder a cambios regulativos</td>
+                        <td><strong>Monitoreo de fuentes:</strong> IA rastrea regulaciones de salud en Colombia → alerta automática cuando hay cambio relevante</td>
+                        <td>Web scraping + NLP. Resultado: equipo legal/compliance notificado → PO prioriza en backlog en minutos, no días</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>3.3 Recomendaciones de Liderazgo para Maximizar Éxito</h4>
+
+            <p><strong>Recomendación 1: Establecer Centro de Excelencia en BI/IA</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Crear equipo de 2-3 personas dedicadas a: "¿Cómo IA mejora nuestra gestión de proyectos?"</li>
+                <li>Responsabilidades:
+                    <ul>
+                        <li>Desarrollar dashboards BI para salud del proyecto (velocity, risks)</li>
+                        <li>Implementar modelos ML para predicciones (atrasos, calidad)</li>
+                        <li>Analizar datos de PQR → insights para Product Owner</li>
+                    </ul>
+                </li>
+                <li>Beneficio: Liderazgo toma decisiones basadas en datos, no intuición</li>
+            </ul>
+
+            <p><strong>Recomendación 2: Integrar IA en Ceremonia de Sprint Review</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Antes del Review: IA genera reporte automático:
+                    <ul>
+                        <li>"Completamos 95% de la meta del sprint"</li>
+                        <li>"Velocidad mejoró 15% vs sprint anterior (análisis de causas raíces con IA)"</li>
+                        <li>"2 features de alto riesgo identificadas para próximo sprint"</li>
+                        <li>"Top 3 temas de PQR: [Tema1, Tema2, Tema3]"</li>
+                    </ul>
+                </li>
+                <li>Durante Review: Discutir insights, no datos brutos</li>
+            </ul>
+
+            <p><strong>Recomendación 3: Liderazgo con Habilidades Digitales</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>PO y Scrum Master deben entender:
+                    <ul>
+                        <li><strong>Concepto de IA:</strong> Qué es posible con ML/NLP, limitaciones</li>
+                        <li><strong>Lectura de dashboards BI:</strong> Interpretar KPIs sin ser "data person"</li>
+                        <li><strong>Ética en datos:</strong> GDPR, privacidad de datos de salud</li>
+                    </ul>
+                </li>
+                <li>Inversión: 40 horas de capacitación en 6 meses (2-3 cursos online)</li>
+            </ul>
+
+            <p><strong>Recomendación 4: Adoptar Mentalidad de "Data-Driven Decision Making"</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Regla: Todas las decisiones importantes (qué priorizar, cuándo lanzar) con dashboard BI + IA insights</li>
+                <li>Ejemplo:
+                    <ul>
+                        <li><strong>Pregunta:</strong> ¿Lanzamos feature X en octubre o noviembre?</li>
+                        <li><strong>Análisis BI:</strong> Histórico de bugs, complejidad, capacidad de equipo</li>
+                        <li><strong>Predicción IA:</strong> "Octubre = 70% riesgo de atraso. Noviembre = 15%"</li>
+                        <li><strong>Decisión:</strong> Lanzar en noviembre (data-driven, no intuición)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><strong>Recomendación 5: Maximizar Adopción de Soluciones BI</strong></p>
+            <p>
+                Para que SURA maximice el éxito con la plataforma Relevant y servicios BI:
+            </p>
+            <ul style="margin-left: 20px;">
+                <li><strong>Usar AI para Personalización:</strong> La app de SURA analiza comportamiento de cada uno de los 10M usuarios → 
+                    recomendaciones personalizadas (servicios de salud, seguros)</li>
+                <li><strong>BI para Autorizaciones Inteligentes:</strong> Modelo ML predice qué autorizaciones van a ser aprobadas → 
+                    acelera proceso, reduce tiempo de espera de pacientes</li>
+                <li><strong>Automatización Legal con IA:</strong> Chatbot entiende PQR automáticamente → categoriza, asigna a equipo correcto, 
+                    acelera resolución</li>
+                <li><strong>Interoperabilidad Mejorada:</strong> IA mapea estándares de salud de diferentes sistemas → 
+                    facilita conexión automática sin manual tedioso</li>
+                <li><strong>Predicción de Demanda:</strong> BI predice qué servicios de salud van a ser más buscados en próxima temporada → 
+                    SURA se prepara con capacidad, stocks</li>
+            </ul>
+
+            <div class="destaca">
+                <p><strong>Síntesis:</strong> Líderes que dominan IA/BI toman decisiones 40% más rápido y con 25% menos errores. 
+                En contexto de SURA (124M autorizaciones, 10M usuarios), eso equivale a millones de pesos en eficiencia y 
+                satisfacción del cliente.</p>
+            </div>
+        </div>
+
+        <!-- CONCLUSIÓN -->
+        <div class="seccion">
+            <h2>Conclusión</h2>
+            
+            <div class="conclusion-box">
+                <h3>Síntesis del Modelo Propuesto</h3>
+                <p>
+                    La metodología Scrum, implementada de manera disciplinada con Sprints de 2-3 semanas, estructura de roles claros 
+                    (Product Owner, Scrum Master, equipo multidisciplinario) y ceremonias bien facilitadas, es el marco ideal para 
+                    que SURA ejecute su ambiciosa transformación digital.
+                </p>
+            </div>
+
+            <p>
+                <strong>Conclusiones Clave:</strong>
+            </p>
+
+            <ol style="font-size: 1.05em; line-height: 1.9;">
+                <li>
+                    <strong>Scrum ≠ Caos.</strong> La metodología proporciona estructura predecible (sprints, dailies, reviews, retros) 
+                    que reduce riesgo y acelera entrega. Para SURA, esto significa que las 124M autorizaciones anuales se procesan 
+                    cada vez más rápido.
+                </li>
+                <li>
+                    <strong>IA y BI son Multiplicadores.</strong> No son decoración. Aplicados a la gestión misma del proyecto 
+                    (predictores de riesgo, dashboards de salud, análisis de PQR), permiten decisiones 40% más rápidas. 
+                    Líderes que los adoptan ganan velocidad competitiva.
+                </li>
+                <li>
+                    <strong>Cultura es Crítica.</strong> Scrum solo funciona si hay mentalidad ágil: 
+                    aceptar cambios, fallar rápido, aprender continuamente. SURA debe invertir en entrenar a su gente en ágil, 
+                    IA y digital mindset.
+                </li>
+                <li>
+                    <strong>El Cliente (10M usuarios) está en el Centro.</strong> Cada sprint debe entregar valor tangible a usuarios: 
+                    más rápido autorizar servicios, experiencia personalizada, mejor comunicación en salud. Scrum + BI/AI + 
+                    enfoque en usuarios = fórmula de éxito.
+                </li>
+                <li>
+                    <strong>Roadmap de Implementación Realista.</strong> Año 1: Implementar Scrum en núcleo del proyecto 
+                    (plataforma Relevant). Año 2: Expandir a otros equipos, integrar BI avanzado. Año 3: AI predictiva 
+                    en todas las decisiones clave. Crecimiento ordenado, no revolucionario.
+                </li>
+            </ol>
+
+            <p style="margin-top: 30px; font-style: italic; font-size: 1.1em; color: #1e3a8a;">
+                <strong>Reflexión Final:</strong> La transformación de SURA no es solo tecnológica (Google Cloud, IA), 
+                sino también organizacional (Scrum, cultura ágil) y de decisiones (BI/data-driven). Líderes que integren 
+                estos tres pilares crearán una organización más rápida, resiliente y orientada al usuario.
+            </p>
+        </div>
+
+        <!-- REFERENCIAS -->
+        <div class="referencias">
+            <h2>Referencias Bibliográficas</h2>
+            
+            <div class="referencia">
+                Scrum.org (2021). <strong>The Scrum Guide</strong>. Versión oficial de Scrum creada por Ken Schwaber y Jeff Sutherland. 
+                Disponible en: https://www.scrum.org/resources/scrum-guide
+            </div>
+
+            <div class="referencia">
+                Beck, K., Beedle, M., van Bennekum, A., et al. (2001). <strong>Agile Manifesto for Software Development</strong>. 
+                Principios fundamentales de metodologías ágiles. Disponible en: http://agilemanifesto.org/
+            </div>
+
+            <div class="referencia">
+                Schwaber, K. & Sutherland, J. (2020). <strong>The Art of Doing Twice the Work in Half the Time</strong>. 
+                Penguin Books. Explicación práctica de Scrum con casos reales.
+            </div>
+
+            <div class="referencia">
+                Cohn, M. (2009). <strong>Succeeding with Agile: Software Development Using Scrum</strong>. 
+                Addison-Wesley. Guía completa para implementar Scrum en organizaciones grandes.
+            </div>
+
+            <div class="referencia">
+                Fowler, M. & Highsmith, J. (2001). <strong>The Agile Manifesto</strong>. 
+                Harvard Business Review. Artículo seminal sobre valores y principios ágiles.
+            </div>
+
+            <div class="referencia">
+                Google Cloud (2024). <strong>IA y Machine Learning en Google Cloud</strong>. 
+                Documentación oficial sobre servicios de IA en la plataforma cloud. 
+                Disponible en: https://cloud.google.com/docs
+            </div>
+
+            <div class="referencia">
+                Gartner (2023). <strong>Magic Quadrant for Analytics and BI Platforms</strong>. 
+                Reporte sobre tendencias en Business Intelligence y análisis de datos en empresas.
+            </div>
+
+            <div class="referencia">
+                Microsoft Learn (2024). <strong>Introduction to Scrum and Agile Project Management</strong>. 
+                Cursos online gratuitos sobre metodología Scrum y Azure DevOps.
+            </div>
+
+            <div class="referencia">
+                PMI (Project Management Institute) (2021). <strong>PMBOK Guide - Agile Practice Guide</strong>. 
+                Estándares de gestión de proyectos ágiles reconocidos internacionalmente.
+            </div>
+
+            <div class="referencia">
+                Universidad Católica de Colombia (2024). <strong>Especialización en Analítica de Datos - Unidad 6: Gestión de Proyectos y Metodologías Ágiles</strong>. 
+                Materiales educativos del programa académico.
+            </div>
+
+            <div class="referencia">
+                Seguros SURA Colombia (2024). <strong>Acuerdo Estratégico con Google Cloud para Transformación Digital en Salud</strong>. 
+                Comunicados y documentos públicos de la empresa sobre la iniciativa Relevant.
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Blog desarrollado para la Especialización en Analítica de Datos</strong></p>
+            <p>Universidad Católica de Colombia | 2026</p>
+            <p>Tema: Metodología Ágil (Scrum) en Transformación Digital</p>
+        </div>
+    </div>
+</body>
+</html>
